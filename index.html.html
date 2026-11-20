@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مبادرة الصلاة على النبي ﷺ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e4;--card:#fffdf6;--ink:#0f2e20;--mut:#587063;--em:#0b6b4a;--em2:#094d36;--gold:#b58a26;--line:#e3d9bf;--ring:#dbe6dc;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#05211a;--card:#0b3025;--ink:#f4efe0;--mut:#a7c1b3;--em:#2fb585;--em2:#0f6b4c;--gold:#e5c46b;--line:#1b4a39;--ring:#134030;--on:#04170f}}
+:root[data-theme="dark"]{--bg:#05211a;--card:#0b3025;--ink:#f4efe0;--mut:#a7c1b3;--em:#2fb585;--em2:#0f6b4c;--gold:#e5c46b;--line:#1b4a39;--ring:#134030;--on:#04170f}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:Cairo,Tahoma,system-ui,sans-serif;background:radial-gradient(circle at 80% -10%,color-mix(in srgb,var(--em) 22%,transparent),transparent 55%),var(--bg);color:var(--ink);line-height:1.8}
+.wrap{max-width:520px;margin:0 auto;padding:20px 16px 100px;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;margin:14px 0;box-shadow:0 8px 24px rgba(0,0,0,.12);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px)}
+h1,h2,h3{margin:.3em 0;line-height:1.4}
+.c{text-align:center}.mut{color:var(--mut)}.gold{color:var(--gold)}
+.btn{display:block;width:100%;border:0;border-radius:16px;padding:14px;font:inherit;font-weight:800;font-size:1.05rem;cursor:pointer;background:linear-gradient(135deg,var(--em),var(--em2));color:var(--on);margin:10px 0;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:scale(1.02);box-shadow:0 0 18px color-mix(in srgb,var(--em) 55%,transparent)}.btn:active{transform:scale(.97)}
+.btn.alt{background:transparent;border:2px solid var(--gold);color:var(--gold)}
+input{width:100%;padding:13px;margin:6px 0 12px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+input:focus,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+label{font-weight:600;font-size:.92rem}
+.err{color:#e5664f;min-height:1.6em;font-weight:600}
+.code{font-size:2.1rem;font-weight:800;letter-spacing:.25em;direction:ltr;color:var(--gold);background:var(--bg);border:2px dashed var(--gold);border-radius:16px;padding:12px;margin:12px 0;user-select:all}
+.ringbtn{position:relative;display:block;margin:10px auto;width:min(72vw,290px);aspect-ratio:1;border:0;background:none;cursor:pointer;color:var(--ink);transition:transform .15s,filter .2s}
+.ringbtn:hover{transform:scale(1.02);filter:drop-shadow(0 0 14px color-mix(in srgb,var(--gold) 45%,transparent))}.ringbtn:active{transform:scale(.95)}
+.ringbtn svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ringbtn circle{fill:none;stroke-width:14;stroke-linecap:round}
+#arc{stroke:var(--gold);transition:stroke-dashoffset .35s ease}
+.ringbtn .in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#num{font-size:4.2rem;font-weight:800;line-height:1.1}#num.pop{animation:pop .22s}
+@keyframes pop{50%{transform:scale(1.18)}}
+.in small{color:var(--mut);font-weight:600}
+nav{position:fixed;inset:auto 0 0 0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+nav button{flex:1;background:none;border:0;padding:12px 2px;color:var(--mut);font:inherit;font-size:.82rem;cursor:pointer}
+nav button.on{color:var(--em);font-weight:800}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:var(--bg);border-radius:16px;padding:12px;text-align:center}.stat b{display:block;font-size:1.6rem;color:var(--gold)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center;font-size:.85rem}
+.cal i{font-style:normal;color:var(--mut);font-size:.75rem}
+.cal span{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--ring);color:var(--mut)}
+.cal .done{background:var(--em);color:var(--on);font-weight:800}.cal .part{background:transparent;border:2px solid var(--gold);color:var(--ink)}.cal .gd{background:var(--gold);color:var(--on);font-weight:800}
+.leg{display:flex;flex-wrap:wrap;gap:10px;font-size:.78rem;color:var(--mut);margin-top:10px}
+.ayah{font-family:Amiri,"Traditional Arabic",serif;font-size:1.8rem;line-height:2.3;text-align:center;margin:10px 0}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0}
+.tg{padding:8px 16px;border-radius:99px;border:1px solid var(--gold);background:none;color:var(--gold);font:inherit;cursor:pointer}.tg.on{background:var(--gold);color:var(--on)}
+#toast{position:fixed;inset:auto 16px 90px;margin:auto;max-width:360px;text-align:center;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:14px;opacity:0;pointer-events:none;transition:opacity .25s;z-index:30}#toast.show{opacity:1}
+.ov{position:fixed;inset:0;z-index:20;background:rgba(2,15,10,.88);display:flex;align-items:center;justify-content:center;padding:20px;animation:fade .4s;overflow:hidden}
+.ov .box{position:relative;background:var(--card);border:2px solid var(--gold);border-radius:26px;padding:28px;text-align:center;max-width:420px;box-shadow:0 0 60px color-mix(in srgb,var(--gold) 45%,transparent)}
+.badge{font-size:4rem;filter:drop-shadow(0 0 14px var(--gold))}
+.p{position:absolute;top:-12px;border-radius:50%;background:var(--gold);opacity:0;animation:fall linear forwards;box-shadow:0 0 8px var(--gold)}
+@keyframes fall{10%{opacity:1}to{transform:translateY(105vh);opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div><div id="toast" role="status" aria-live="polite"></div>
+<script>
+const CFG={name:"مبادرة الصلاة على النبي ﷺ",desc:"نجتمع كل يوم على الصلاة على النبي ﷺ حتى نهاية الفصل الدراسي، صلاةً صادقة ومداومةً مباركة.",target:100,tz:"Asia/Jerusalem"};
+const VERSES=[
+["الأحزاب","٣٣","٥٦","إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّونَ عَلَى النَّبِيِّ ۚ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا"],
+["الرعد","١٣","٢٨","الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ"],
+["البقرة","٢","١٥٢","فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ"],
+["الشرح","٩٤","٥–٦","فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا"],
+["الأحزاب","٣٣","٤١","يَا أَيُّهَا الَّذِينَ آمَنُوا اذْكُرُوا اللَّهَ ذِكْرًا كَثِيرًا"],
+["الزمر","٣٩","١٠","إِنَّمَا يُوَفَّى الصَّابِرُونَ أَجْرَهُم بِغَيْرِ حِسَابٍ"],
+["طه","٢٠","١١٤","وَقُل رَّبِّ زِدْنِي عِلْمًا"]];
+const $=s=>document.querySelector(s);
+const ls={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){toast("تعذّر الحفظ على هذا الجهاز")}}};
+const n=x=>Number(x).toLocaleString("ar-EG");
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm=s=>s.trim().replace(/\s+/g," ");
+const today=()=>new Intl.DateTimeFormat("en-CA",{timeZone:CFG.tz}).format(new Date());
+const students=()=>ls.get("sl:students",[]);
+const K=t=>"sl:"+t+":"+S.user.id;
+async function sha(s){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function genCode(){const A="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";return[...crypto.getRandomValues(new Uint8Array(8))].map(x=>A[x%32]).join("")}
+let S={view:"landing",tab:"home",user:null,code:"",m:0,sound:ls.get("sl:sound",false),fails:0,lock:0,d:today()};
+const th=ls.get("sl:theme",null);if(th)document.documentElement.dataset.theme=th;
+const sid=ls.get("sl:session",null);if(sid){const u=students().find(s=>s.id===sid);if(u){S.user=u;S.view="app"}}
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),2600)}
+let ctx;function beep(f,d,v){if(!S.sound)return;try{ctx=ctx||new AudioContext();const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=f;g.gain.value=v||.05;g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+d);o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+d)}catch(e){}}
+const fail=m=>{$("#err").textContent=m};
+const logo='<svg width="84" height="84" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="var(--gold)" stroke-width="3"><rect x="22" y="22" width="56" height="56"/><rect x="22" y="22" width="56" height="56" transform="rotate(45 50 50)"/></g><circle cx="50" cy="50" r="9" fill="var(--gold)"/></svg>';
+const foot='<p class="mut c" style="font-size:.8rem">يسجّل الموقع مشاركة الطالب كما يدخلها بنفسه، ولا يتحقق من أدائها؛ فالنية والإخلاص بين العبد وربه.</p>';
+function render(){
+ const a=$("#app");let h="";
+ if(S.view==="landing")h=`<div class="wrap c">${logo}<h1>${esc(CFG.name)}</h1><p class="mut">${esc(CFG.desc)}</p><div class="card"><h2 class="gold">${n(CFG.target)} صلاة على النبي ﷺ كل يوم</h2><p>«اللهم صلِّ وسلِّم على نبينا محمد» — قليلٌ دائم خيرٌ من كثير منقطع.</p></div><button class="btn" data-act="to-reg">إنشاء حساب</button><button class="btn alt" data-act="to-login">تسجيل الدخول</button>${foot}</div>`;
+ else if(S.view==="reg")h=`<div class="wrap"><h2 class="c">إنشاء حساب</h2><form class="card" data-form="reg"><label>الاسم الكامل</label><input name="name" autocomplete="off" required><label>الصف</label><input name="grade" required><label>الشعبة</label><input name="cls" required><div class="err" id="err"></div><button class="btn">إنشاء الحساب</button><button type="button" class="btn alt" data-act="to-landing">رجوع</button></form></div>`;
+ else if(S.view==="code")h=`<div class="wrap c"><div class="badge">🌙</div><h2>تم إنشاء حسابك، ${esc(S.user.name)}</h2><div class="card"><p>هذا رمز الدخول الخاص بك. <b>احفظه الآن</b>؛ لن يظهر مرة أخرى، وستحتاجه مع اسمك لتسجيل الدخول.</p><div class="code" id="cd">${S.code}</div><button class="btn alt" data-act="copy">نسخ الرمز</button></div><button class="btn" data-act="enter">ابدأ التسبيح</button></div>`;
+ else if(S.view==="login")h=`<div class="wrap"><h2 class="c">تسجيل الدخول</h2><form class="card" data-form="login"><label>الاسم الكامل</label><input name="name" autocomplete="off" required><label>رمز الطالب</label><input name="code" maxlength="8" autocapitalize="characters" autocomplete="off" style="direction:ltr;text-transform:uppercase;letter-spacing:.2em" required><div class="err" id="err"></div><button class="btn">دخول</button><button type="button" class="btn alt" data-act="to-landing">رجوع</button></form></div>`;
+ else h=appView();
+ a.innerHTML=h;if(S.view==="app")paint(cnt(),false);
+}
+const cnt=()=>(ls.get(K("r"),{})[today()]||0);
+function appView(){
+ const u=S.user,d=today();S.d=d;
+ const tabs=[["home","الرئيسية"],["prog","تقدمي"],["verse","النفحة الإيمانية"],["set","الإعدادات"]];
+ let b="";
+ if(S.tab==="home"){const dt=new Intl.DateTimeFormat("ar",{timeZone:CFG.tz,dateStyle:"full"}).format(new Date());
+  b=`<div class="c"><h3 class="gold">${esc(CFG.name)}</h3><h2>أهلًا، ${esc(u.name.split(" ")[0])} 🌿</h2><div class="mut">${dt}</div></div>
+  <button class="ringbtn" data-act="tap" aria-label="اضغط لتسجيل صلاة واحدة على النبي"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" stroke="var(--ring)"/><circle id="arc" cx="100" cy="100" r="90" stroke-dasharray="565.49" stroke-dashoffset="565.49"/></svg><div class="in"><span id="num">٠</span><small>من ${n(CFG.target)}</small></div></button>
+  <p class="c" id="st" style="font-weight:600"></p><p class="c mut">اضغط على الدائرة لتسجيل صلاة واحدة. يُحفظ العدّ تلقائيًا.</p>`}
+ else if(S.tab==="prog")b=progView();
+ else if(S.tab==="verse"){const [s,sn,v,t]=verseOf();b=`<h2 class="c">نفحة إيمانية</h2><div class="card"><div class="ayah">${t}</div><p class="c gold">سورة ${s} — الآية ${v}</p><p class="c mut" style="font-size:.85rem">آية اليوم واحدة لجميع الطلاب، وتتبدّل كل يوم بتوقيت القدس.</p></div>`}
+ else b=`<h2 class="c">الإعدادات</h2><div class="card"><div class="row"><span>الأصوات</span><button class="tg ${S.sound?"on":""}" data-act="sound">${S.sound?"مفعّلة":"متوقفة"}</button></div><div class="row"><span>المظهر</span><button class="tg" data-act="theme">تبديل فاتح / داكن</button></div><p class="mut" style="font-size:.85rem">يُحفظ تقدمك على هذا الجهاز وفي هذا المتصفح فقط.</p></div><button class="btn alt" data-act="logout">تسجيل الخروج</button>`;
+ return `<div class="wrap">${b}</div><nav>${tabs.map(t=>`<button class="${S.tab===t[0]?"on":""}" data-act="tab" data-t="${t[0]}">${t[1]}</button>`).join("")}</nav>`;
+}
+function verseOf(){const[y,m,d]=today().split("-").map(Number);return VERSES[Math.floor(Date.UTC(y,m-1,d)/864e5)%VERSES.length]}
+function progView(){
+ const r=ls.get(K("r"),{}),T=CFG.target,ds=Object.keys(r).filter(k=>r[k]>0);
+ const tot=ds.reduce((s,k)=>s+r[k],0),done=ds.filter(k=>r[k]>=T).length;
+ const first=u=>0,since=Math.max(1,Math.round((Date.parse(today())-Date.parse(S.user.at))/864e5)+1);
+ const pct=Math.min(100,Math.round(done/since*100));
+ const base=new Date();const[ty,tm]=today().split("-").map(Number);const dt=new Date(Date.UTC(ty,tm-1+S.m,1));const y=dt.getUTCFullYear(),m=dt.getUTCMonth();
+ const lead=dt.getUTCDay(),len=new Date(Date.UTC(y,m+1,0)).getUTCDate();
+ let cells="";for(let i=0;i<lead;i++)cells+="<span style='background:none'></span>";
+ for(let d=1;d<=len;d++){const k=`${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`,c=r[k]||0;cells+=`<span class="${c>=2*T?"gd":c>=T?"done":c>0?"part":""}" title="${n(c)}">${n(d)}</span>`}
+ const mn=new Intl.DateTimeFormat("ar",{timeZone:"UTC",month:"long",year:"numeric"}).format(dt);
+ return `<h2 class="c">تقدمي</h2><div class="stats"><div class="stat"><b>${n(tot)}</b>إجمالي الصلوات</div><div class="stat"><b>${n(done)}</b>أيام مكتملة</div><div class="stat"><b>${n(ds.length)}</b>أيام المشاركة</div><div class="stat"><b>${n(pct)}٪</b>نسبة الإتمام</div></div>
+ <div class="card"><div class="row"><button class="tg" data-act="mo" data-d="-1">‹ السابق</button><b>${mn}</b><button class="tg" data-act="mo" data-d="1">التالي ›</button></div><div class="cal">${["أحد","اثنين","ثلاثاء","أربعاء","خميس","جمعة","سبت"].map(x=>`<i>${x}</i>`).join("")}${cells}</div>
+ <div class="leg"><span>🟢 مكتمل</span><span>🟡 ضعف الهدف أو أكثر</span><span>◯ غير مكتمل</span><span>▫️ بلا مشاركة</span></div></div>`;
+}
+function paint(c,pop){
+ const T=CFG.target,e=$("#num");if(!e)return;e.textContent=n(c);
+ if(pop){e.classList.remove("pop");void e.offsetWidth;e.classList.add("pop")}
+ $("#arc").style.strokeDashoffset=565.49*(1-Math.min(c/T,1));
+ $("#st").innerHTML=c<T?`المتبقي ${n(T-c)} صلاة`:c===T?"<span class='gold'>✦ مكتمل — ما شاء الله ✦</span>":`<span class='gold'>✦ مكتمل، مع ${n(c-T)} زيادة ✦</span>`;
+}
+let last=0;
+function tap(){
+ const t=Date.now();if(t-last<150)return;last=t;
+ const d=today(),r=ls.get(K("r"),{}),c=(r[d]||0)+1;r[d]=c;ls.set(K("r"),r);beep(520,.07);paint(c,true);
+ const cel=ls.get(K("c"),{});if(c===CFG.target&&!cel[d]){cel[d]=1;ls.set(K("c"),cel);celebrate()}
+}
+function celebrate(){
+ const o=document.createElement("div");o.className="ov";
+ let p="";for(let i=0;i<34;i++)p+=`<i class="p" style="left:${Math.random()*100}%;width:${4+Math.random()*7}px;height:${4+Math.random()*7}px;animation-duration:${3+Math.random()*3}s;animation-delay:${Math.random()*2}s"></i>`;
+ o.innerHTML=p+`<div class="box" role="dialog" aria-modal="true"><div class="badge">🏅</div><h2 class="gold">ما شاء الله!</h2><p style="font-size:1.1rem">أتممت ${n(CFG.target)} صلاة على النبي ﷺ اليوم. تقبّل الله منك.</p><button class="btn" id="cl">آمين</button></div>`;
+ document.body.appendChild(o);$("#cl").focus();$("#cl").onclick=()=>o.remove();
+ beep(660,.5,.06);setTimeout(()=>beep(880,.7,.05),220);
+}
+async function reg(f){
+ const name=norm(f.name.value),grade=f.grade.value.trim(),cls=f.cls.value.trim(),list=students();
+ if(name.split(" ").length<2||!grade||!cls)return fail("أدخل الاسم الكامل والصف والشعبة");
+ const key=[name,grade,cls].join("|");
+ if(list.some(s=>s.key===key))return fail("هذا الطالب مسجّل بالفعل");
+ let code,hash;do{code=genCode();hash=await sha(name+"|"+code)}while(list.some(s=>s.hash===hash));
+ const st={id:crypto.randomUUID(),name,grade,cls,hash,key,at:today()};
+ list.push(st);ls.set("sl:students",list);ls.set("sl:session",st.id);
+ S.user=st;S.code=code;S.view="code";render();
+}
+async function login(f){
+ const now=Date.now();if(S.lock>now)return fail("محاولات كثيرة، انتظر نصف دقيقة ثم أعد المحاولة");
+ const h=await sha(norm(f.name.value)+"|"+f.code.value.trim().toUpperCase()),st=students().find(s=>s.hash===h);
+ if(!st){if(++S.fails>=5){S.lock=now+30000;S.fails=0}return fail("الاسم أو الرمز غير صحيح")}
+ ls.set("sl:session",st.id);S.user=st;S.view="app";S.tab="home";render();
+}
+document.addEventListener("submit",e=>{e.preventDefault();const f=e.target;f.dataset.form==="reg"?reg(f):login(f)});
+document.addEventListener("click",async e=>{
+ const b=e.target.closest("[data-act]");if(!b)return;const a=b.dataset.act;
+ if(a==="tap")return tap();
+ if(a==="to-reg"||a==="to-login"||a==="to-landing"){S.view=a.slice(3);render()}
+ else if(a==="enter"){S.view="app";S.tab="home";render()}
+ else if(a==="copy"){try{await navigator.clipboard.writeText(S.code);toast("تم نسخ الرمز")}catch(x){toast("انسخ الرمز يدويًا من الشاشة")}}
+ else if(a==="tab"){S.tab=b.dataset.t;S.m=0;render()}
+ else if(a==="mo"){S.m+=Number(b.dataset.d);render()}
+ else if(a==="sound"){S.sound=!S.sound;ls.set("sl:sound",S.sound);render();beep(520,.07)}
+ else if(a==="theme"){const t=document.documentElement.dataset.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=t;ls.set("sl:theme",t)}
+ else if(a==="logout"){try{localStorage.removeItem("sl:session")}catch(x){}S.user=null;S.view="landing";render()}
+});
+setInterval(()=>{if(S.view==="app"&&S.d!==today())render()},30000);
+render();
+</script>
+</body>
+</html>
